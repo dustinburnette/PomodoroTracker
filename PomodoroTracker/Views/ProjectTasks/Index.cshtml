@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PomodoroTracker.Models.ProjectTask>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Project.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstimatedPomodoroCount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstimatedPomodoroCount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProjectTaskID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProjectTaskID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProjectTaskID })
+        </td>
+    </tr>
+}
+
+</table>

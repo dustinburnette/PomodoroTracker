@@ -201,6 +201,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PomodoroesController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\ProjectTasksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -270,6 +273,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\ProjectTasks\Create.cshtml" />
+    <Content Include="Views\ProjectTasks\Delete.cshtml" />
+    <Content Include="Views\ProjectTasks\Details.cshtml" />
+    <Content Include="Views\ProjectTasks\Edit.cshtml" />
+    <Content Include="Views\ProjectTasks\Index.cshtml" />
+    <Content Include="Views\Pomodoroes\Create.cshtml" />
+    <Content Include="Views\Pomodoroes\Delete.cshtml" />
+    <Content Include="Views\Pomodoroes\Details.cshtml" />
+    <Content Include="Views\Pomodoroes\Edit.cshtml" />
+    <Content Include="Views\Pomodoroes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -29,5 +29,11 @@ namespace PomodoroTracker.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<PomodoroTracker.Models.Project> Projects { get; set; }
+
+        public System.Data.Entity.DbSet<PomodoroTracker.Models.ProjectTask> ProjectTasks { get; set; }
+
+        public System.Data.Entity.DbSet<PomodoroTracker.Models.Pomodoro> Pomodoroes { get; set; }
     }
 }
