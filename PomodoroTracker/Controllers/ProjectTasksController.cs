@@ -88,7 +88,7 @@ namespace PomodoroTracker.Controllers
             {
                 db.Entry(projectTask).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details","Projects", new {id = projectTask.ProjectID });
             }
             ViewBag.ProjectID = new SelectList(db.Projects, "ProjectID", "Description", projectTask.ProjectID);
             return View(projectTask);
@@ -117,7 +117,7 @@ namespace PomodoroTracker.Controllers
             ProjectTask projectTask = db.ProjectTasks.Find(id);
             db.ProjectTasks.Remove(projectTask);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details","Projects", new {id = projectTask.ProjectID });
         }
 
         protected override void Dispose(bool disposing)

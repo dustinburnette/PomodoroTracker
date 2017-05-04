@@ -20,7 +20,59 @@
 
     </dl>
 </div>
+
+<h4>Tasks</h4>
+
+<div class="row">
+    <form id="NewTaskForm">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input id="ProjectId" type="hidden" value="@Model.ProjectID" />
+                <input class="form-control" id="NewProjectTaskDescriptionInput" type="text" placeholder="New task description ..." />
+
+                <input class="form-control" id="NewProjectTaskEstimatedPomodoroesInput" type="number" placeholder="Est. Pomodoroes ..." />
+
+                <button class="btn btn-info" id="NewProjectTaskCreateButton" type="submit">Create</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(modelItem => modelItem.ProjectTasks[0].Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => modelItem.ProjectTasks[0].EstimatedPomodoroCount)
+        </th>
+        <th>
+            
+        </th>
+    </tr>
+         
+    @foreach (var task in Model.ProjectTasks)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => task.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => task.EstimatedPomodoroCount)
+            </td>
+            <td>
+                @Html.ActionLink("Edit","Edit","ProjectTasks", new { id = task.ProjectTaskID },new { }) | 
+                @Html.ActionLink("Details", "Details", "ProjectTasks", new { id = task.ProjectTaskID },new { }) |
+                @Html.ActionLink("Delete", "Delete", "ProjectTasks", new { id = task.ProjectTaskID }, new { })
+            </td>
+        </tr>
+    }
+</table>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+@section scripts{
+    <script type="text/javascript"src="~/Scripts/App/ProjectDetails.js"></script>
+    }

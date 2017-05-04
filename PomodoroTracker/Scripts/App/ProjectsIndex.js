@@ -9,7 +9,7 @@
                 var newProjectID = data.ProjectID;
                 var newProjectEditLink = '<a href="/Projects/Edit/' + newProjectID + '">Edit</a>';
                 var newProjectDetailsLink = '<a href="/Projects/Details/' + newProjectID + '">Details</a>';
-                var newProjectDeleteLink = '<a href="/Projects/Edit/' + newProjectID + '">Delete</a>';
+                var newProjectDeleteLink = '<a href="/Projects/Delete/' + newProjectID + '">Delete</a>';
 
                 $('table tbody').append('<tr><td>' + newProjectDescription + '</td><td>' + newProjectEditLink + ' | ' + newProjectDetailsLink + ' | ' + newProjectDeleteLink + '</td></tr>');
                 $('#NewProjectDescriptionInput').val('');
