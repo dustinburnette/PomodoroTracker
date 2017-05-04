@@ -1,14 +1,25 @@
 ﻿@model IEnumerable<PomodoroTracker.Models.Project>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Projects";
 }
 
-<h2>Index</h2>
+<h2>Projects</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+<div class="col-lg-6">
+    <form id="NewProjectForm">
+        <div class="form-group">
+            <div class="input-group">
+                <input class="form-control" id="NewProjectDescriptionInput" type="text" placeholder="New Project ..." />
+                <span class="input-group-btn">
+                    <button class="btn btn-info" id="NewProjectCreateButton" type="submit">Create</button>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+
 <table class="table">
     <tr>
         <th>
@@ -31,3 +42,6 @@
 }
 
 </table>
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/App/ProjectsIndex.js"></script>
+}
