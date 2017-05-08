@@ -28,7 +28,7 @@ namespace PomodoroTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProjectTask projectTask = db.ProjectTasks.Find(id);
+            ProjectTask projectTask = db.ProjectTasks.Include(task => task.Pomodoros).Where(task => task.ProjectTaskID == id).FirstOrDefault();
             if (projectTask == null)
             {
                 return HttpNotFound();

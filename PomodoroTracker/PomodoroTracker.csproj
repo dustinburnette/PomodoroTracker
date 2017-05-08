@@ -201,6 +201,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PomodoroesApiController.cs" />
     <Compile Include="Controllers\PomodoroesController.cs" />
     <Compile Include="Controllers\ProjectsApiController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />

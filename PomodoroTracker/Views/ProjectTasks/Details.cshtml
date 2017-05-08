@@ -4,7 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+
+<h2>Task Details</h2>
+
 
 <div>
     <h4>ProjectTask</h4>
@@ -36,6 +38,44 @@
 
     </dl>
 </div>
+
+<h4>
+    Pomodoroes
+</h4>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pomodoros[0].ProjectTask.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pomodoros[0].StartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pomodoros[0].DurationInMinutes)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Pomodoros)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectTask.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DurationInMinutes)
+            </td>
+            <td>
+                @Html.ActionLink("Edit","Edit","Pomodoros", new { id = item.PomodoroID}, new { }) | 
+                @Html.ActionLink("Details","Details","Pomodoros", new { id = item.PomodoroID }, new { }) | 
+                @Html.ActionLink("Delete","Delete","Pomodoros", new {id = item.PomodoroID }, new { } ) | 
+            </td>
+        </tr>
+    }
+</table>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectTaskID }) |
     @Html.ActionLink("Back to List", "Index")
